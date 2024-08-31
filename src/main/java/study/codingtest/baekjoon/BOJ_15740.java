@@ -1,28 +1,24 @@
-package study.codingtest.BOJ;
+package study.codingtest.baekjoon;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
+import java.math.BigInteger;
 import java.util.StringTokenizer;
 
-public class BOJ_9093 {
+public class BOJ_15740 {
 
   public static void main(String[] args) throws IOException {
     BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
     BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(System.out));
 
-    int n = Integer.parseInt(reader.readLine());
-    for (int i = 0; i < n; i++) {
-      StringTokenizer st = new StringTokenizer(reader.readLine());
-      StringBuilder sb = new StringBuilder();
-      while (st.hasMoreTokens()) {
-        sb.append(new StringBuilder(st.nextToken()).reverse()).append(" ");
-      }
-      writer.write(sb.toString());
-      writer.newLine();
-    }
+    StringTokenizer st = new StringTokenizer(reader.readLine());
+    BigInteger a = new BigInteger(st.nextToken());
+    BigInteger b = new BigInteger(st.nextToken());
+
+    writer.write(a.add(b).toString());
     writer.flush();
   }
 }

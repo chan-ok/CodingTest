@@ -1,4 +1,4 @@
-package study.codingtest.BOJ;
+package study.codingtest.baekjoon;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;

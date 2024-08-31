@@ -1,28 +1,30 @@
-package study.codingtest.BOJ;
+package study.codingtest.baekjoon;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
-import java.util.StringTokenizer;
 
-public class BOJ_1037 {
+public class BOJ_3460 {
 
   public static void main(String[] args) throws IOException {
     BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
     BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(System.out));
 
-    int max = 2;
-    int min = 1_000_000;
-    String s = reader.readLine();
-    StringTokenizer st = new StringTokenizer(reader.readLine());
-    while (st.hasMoreTokens()) {
-      int n = Integer.parseInt(st.nextToken());
-      max = Math.max(max, n);
-      min = Math.min(min, n);
+    int T = Integer.parseInt(reader.readLine());
+    for (int i = 0; i < T; i++) {
+      int n = Integer.parseInt(reader.readLine());
+      int idx = 0;
+      while (n > 0) {
+        if (n % 2 == 1) {
+          writer.write(idx + " ");
+        }
+        n /= 2;
+        idx++;
+      }
+      writer.write("\n");
     }
-    writer.write(String.valueOf(max * min));
     writer.flush();
   }
 }

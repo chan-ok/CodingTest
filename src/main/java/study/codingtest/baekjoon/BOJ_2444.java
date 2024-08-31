@@ -1,4 +1,4 @@
-package study.codingtest.BOJ;
+package study.codingtest.baekjoon;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -6,24 +6,19 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 
-public class BOJ_3460 {
+public class BOJ_2444 {
 
   public static void main(String[] args) throws IOException {
     BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
     BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(System.out));
-
-    int T = Integer.parseInt(reader.readLine());
-    for (int i = 0; i < T; i++) {
-      int n = Integer.parseInt(reader.readLine());
-      int idx = 0;
-      while (n > 0) {
-        if (n % 2 == 1) {
-          writer.write(idx + " ");
-        }
-        n /= 2;
-        idx++;
-      }
-      writer.write("\n");
+    int n = Integer.parseInt(reader.readLine());
+    for (int i = 1; i < n; i++) {
+      writer.write(" ".repeat(n - i) + "*".repeat(2 * i - 1));
+      writer.newLine();
+    }
+    for (int i = n; i > 0; i--) {
+      writer.write(" ".repeat(n - i) + "*".repeat(2 * i - 1));
+      writer.newLine();
     }
     writer.flush();
   }

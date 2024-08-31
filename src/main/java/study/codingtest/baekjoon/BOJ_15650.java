@@ -1,4 +1,4 @@
-package study.codingtest.BOJ;
+package study.codingtest.baekjoon;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -7,14 +7,11 @@ import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.util.ArrayDeque;
 import java.util.Arrays;
-import java.util.List;
 import java.util.SortedSet;
 import java.util.StringTokenizer;
 import java.util.TreeSet;
-import java.util.stream.Collectors;
-import java.util.stream.IntStream;
 
-public class BOJ_15649 {
+public class BOJ_15650 {
 
   public static void main(String[] args) throws IOException {
     BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
@@ -32,9 +29,8 @@ public class BOJ_15649 {
       }
       return 0;
     });
-    List<Integer> range = IntStream.rangeClosed(1, n).boxed().collect(Collectors.toList());
 
-    dfs(result, range, m, new ArrayDeque<>());
+    dfs(result, 1, n, m, new ArrayDeque<>());
     for (int[] arr : result) {
       StringBuilder sb = new StringBuilder();
       Arrays.stream(arr).forEach(i -> sb.append(i).append(" "));
@@ -44,16 +40,16 @@ public class BOJ_15649 {
     writer.flush();
   }
 
-  public static void dfs(SortedSet<int[]> result, List<Integer> range, int size,
+  public static void dfs(SortedSet<int[]> result, int start, int range, int size,
       ArrayDeque<Integer> combination) {
     if (size == 0) {
       result.add(combination.stream().mapToInt(Integer::valueOf).toArray());
       return;
     }
-    for (int i = 0; i < range.size(); i++) {
-      combination.add(range.remove(i));
-      dfs(result, range, size - 1, combination);
-      range.add(i, combination.pollLast());
+    for (int i = start; i <= range; i++) {
+      combination.add(i);
+      dfs(result, i + 1, range, size - 1, combination);
+      combination.pollLast();
     }
   }
 }

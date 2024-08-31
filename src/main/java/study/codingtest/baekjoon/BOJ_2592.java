@@ -1,4 +1,4 @@
-package study.codingtest.BOJ;
+package study.codingtest.baekjoon;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
