@@ -15,10 +15,11 @@
 
 ##### 자료구조
 
-- [프린터 큐 BOJ_1966](https://www.acmicpc.net/problem/1966)
-- [스택 BOJ_10828](https://www.acmicpc.net/problem/10828)
-- [큐 BOJ_10845](https://www.acmicpc.net/problem/10845)
-- [데크 BOJ_10866](https://www.acmicpc.net/problem/10866)
+- [1158) 요세푸스 문제](https://www.acmicpc.net/problem/1158)
+- [1966) 프린터 큐](https://www.acmicpc.net/problem/1966)
+- [10828) 스택](https://www.acmicpc.net/problem/10828)
+- [10845) 큐](https://www.acmicpc.net/problem/10845)
+- [10866) 데크](https://www.acmicpc.net/problem/10866)
 
 ##### 브루트포스 알고리즘
 
