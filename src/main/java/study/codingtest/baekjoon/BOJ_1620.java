@@ -3,11 +3,9 @@ package study.codingtest.baekjoon;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.StringTokenizer;
-import java.util.stream.Collectors;
 
 public class BOJ_1620 {
 
@@ -17,10 +15,23 @@ public class BOJ_1620 {
     StringTokenizer st = new StringTokenizer(br.readLine());
     int n = Integer.parseInt(st.nextToken());
     int m = Integer.parseInt(st.nextToken());
-    Map<String, Integer> pokemonMap = new HashMap<>();
+    Map<Integer, String> pokemonIndexMap = new HashMap<>();
+    Map<String, Integer> pokemonNameMap = new HashMap<>();
     for (int i = 1; i <= n; i++) {
-      pokemonMap.put(br.readLine(), i);
+      String name = br.readLine();
+      pokemonIndexMap.put(i, name);
+      pokemonNameMap.put(name, i);
     }
+    StringBuilder sb = new StringBuilder();
+    for (int i = 0; i < m; i++) {
+      String input = br.readLine();
+      if (Character.isDigit(input.charAt(0))) {
+        sb.append(pokemonIndexMap.get(Integer.parseInt(input))).append("\n");
+      } else {
+        sb.append(pokemonNameMap.get(input)).append("\n");
+      }
+    }
+    System.out.println(sb);
   }
 
 }
