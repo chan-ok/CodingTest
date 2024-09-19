@@ -7,7 +7,7 @@ import java.util.Arrays;
 import java.util.Map;
 import java.util.stream.Collectors;
 
-public class BOJ_10816 {
+public class BOJ_10815 {
 
 //  public static void main(String[] args) throws IOException {
 //    BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -41,7 +41,7 @@ public class BOJ_10816 {
     String ignore2 = br.readLine();
     StringBuilder sb = new StringBuilder();
     Arrays.stream(br.readLine().split(" "))
-        .map(i -> cards.getOrDefault(i, 0L))
+        .map(i -> cards.containsKey(i) ? 1 : 0)
         .forEach(i -> sb.append(i).append(" "));
     System.out.println(sb);
   }
