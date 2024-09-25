@@ -3,12 +3,12 @@ package study.codingtest.baekjoon;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.HashSet;
 import java.util.LinkedList;
+import java.util.List;
 import java.util.Map;
 import java.util.Queue;
-import java.util.Set;
 import java.util.StringTokenizer;
 
 public class BOJ_12851 {
@@ -21,41 +21,39 @@ public class BOJ_12851 {
     System.out.println(bfs(n, k));
   }
 
-  public static String bfs(int n, int k) {
+  public static StringBuilder bfs(int n, int k) {
+    int count = 0;
+    StringBuilder sb = new StringBuilder();
     if (n == k) {
-      return "0\n1";
+      return sb.append(0).append("\n").append(1);
     }
     Map<Integer, Integer> discovered = new HashMap<>();
     discovered.put(n, 0);
-    Queue<Integer> queue = new LinkedList<>();
-    queue.add(n);
-    int count = 0;
-    int mininumPath = Integer.MAX_VALUE;
+    Queue<List<Integer>> queue = new LinkedList<>();
+    queue.add(List.of(n, 0));
     while (!queue.isEmpty()) {
-      int cur = queue.poll();
-      Set<Integer> set = new HashSet<>();
-      if (discovered.getOrDefault(k, mininumPath) > discovered.get(cur)) {
-        if (cur + 1 <= 100_000) {
-          set.add(cur + 1);
-        }
-        if (cur - 1 >= 0) {
-          set.add(cur - 1);
-        }
-        if (cur * 2 <= 100_000) {
-          set.add(cur * 2);
-        }
+      List<Integer> cur = queue.poll();
+      List<List<Integer>> list = new ArrayList<>();
+      if (cur.get(0) < 100_000) {
+        list.add(List.of(cur.get(0) + 1, cur.get(1) + 1));
       }
-      for (int next : set) {
-        if (next == k) {
-          count++;
-        }
-        if (discovered.containsKey(next)) {
+      if (cur.get(0) > 0) {
+        list.add(List.of(cur.get(0) - 1, cur.get(1) + 1));
+      }
+      if (cur.get(0) * 2 <= 100_000) {
+        list.add(List.of(cur.get(0) * 2, cur.get(1) + 1));
+      }
+      for (List<Integer> next : list) {
+        if (discovered.containsKey(next.get(0)) && next.get(1) > discovered.get(next.get(0))) {
           continue;
         }
         queue.add(next);
-        discovered.put(next, discovered.get(cur) + 1);
+        discovered.put(next.get(0), discovered.get(cur.get(0)) + 1);
+        if (next.get(0) == k) {
+          count++;
+        }
       }
     }
-    return discovered.containsKey(k) ? discovered.get(k) + "\n" + count : "-1";
+    return sb.append(discovered.get(k)).append("\n").append(count);
   }
 }
