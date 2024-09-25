@@ -1,6 +1,11 @@
 코딩 테스트
 ---
 
+
+#### Baekjoon Stats
+[![solved.ac tier](http://mazassumnida.wtf/api/v2/generate_badge?boj=less3rpanda)](https://solved.ac/less3rpanda)
+
+
 ## 문제 사이트
 
 - [백준](https://www.acmicpc.net/)
