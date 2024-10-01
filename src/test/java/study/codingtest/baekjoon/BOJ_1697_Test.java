@@ -2,6 +2,7 @@ package study.codingtest.baekjoon;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+import study.codingtest.baekjoon.bps.BOJ_1697;
 
 class BOJ_1697_Test {
 
