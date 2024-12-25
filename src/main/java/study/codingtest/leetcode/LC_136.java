@@ -1,16 +1,8 @@
 package study.codingtest.leetcode;
 
-public class LC_136 {
-  public static void main(String[] args) {
-    int[] nums = {1,2,1};
-    System.out.println(singleNumber(nums));
-  }
+import java.util.Arrays;
+import java.util.function.ToIntFunction;
 
-  public static int singleNumber(int[] nums) {
-    int result = 0;
-    for (int num : nums) {
-      result ^= num;
-    }
-    return result;
-  }
+public class LC_136 {
+  public ToIntFunction<int[]> singleNumber = nums -> Arrays.stream(nums).reduce((a, b) -> a ^ b).orElse(0);
 }
