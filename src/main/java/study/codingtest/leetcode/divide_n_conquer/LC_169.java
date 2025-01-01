@@ -1,9 +1,7 @@
-package study.codingtest.leetcode.divide-conquer;
-
-import java.util.*;
-
+package study.codingtest.leetcode.divide_n_conquer;
 
 public class LC_169 {
+
   public int majorityElement(int[] nums) {
     return majorityElement(0, nums.length - 1, nums);
   }
