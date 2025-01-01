@@ -1,0 +1,1 @@
+tailrec fun fib(n: Int, x: Int = 0, y: Int = 1): Int = if (n == 0) x else fib(n - 1, y, x + y)
