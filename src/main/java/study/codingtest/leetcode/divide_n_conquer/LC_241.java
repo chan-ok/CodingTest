@@ -1,4 +1,4 @@
-package study.codingtest.leetcode.divide-conquer;
+package study.codingtest.leetcode.divide_n_conquer;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -16,7 +16,7 @@ public class LC_241 {
       return memo.get(expression);
     }
 
-    for(int i = 0; i < expression.length(); i++) {
+    for (int i = 0; i < expression.length(); i++) {
       char c = expression.charAt(i);
       if (c == '+' || c == '-' || c == '*') {
         List<Integer> left = diffWaysToCompute(expression.substring(0, i));
