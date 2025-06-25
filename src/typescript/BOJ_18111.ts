@@ -4,7 +4,7 @@
  * @author Chanho Kim
  * @see https://www.acmicpc.net/problem/18111
  */
-const fs = require("node:fs");
+export const fs = require("node:fs");
 const inputTarget =
   process.platform === "linux" ? "/dev/stdin" : `${__dirname}/input.txt`;
 const input: string[] = fs.readFileSync(inputTarget, "utf8").trim().split("\n");
