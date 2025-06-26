@@ -1,3 +1,4 @@
 {
-  "include": ["./src/typescript/**/*.ts"]
+  "include": ["./src/typescript/**/*.ts"],
+  "exclude": ["node_modules"]
 }
